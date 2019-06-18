@@ -7,7 +7,12 @@
         <title>Document</title>
     </head>
     <body>
-        <!-- <h1>yoyoyo username:<%- data.username %></h1> -->
-        <p>新增<input type="text" /></p>
-    </body>
-</html>
+        <% for(var i=0; i<data.length; i++) { %>
+            <li>
+                <a href=''>
+                    <%= data[i].username %>
+                    </a>
+                </li>
+                <% } %>
+                </body>
+            </html>

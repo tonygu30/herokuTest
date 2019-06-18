@@ -23,7 +23,7 @@ const data = {};
 // select MyGuests table and print all colums
 connection.query("select * from auth", function(err, rows, fields) {
   if (err) throw err;
-  data.user = rows[0];
+  data.user = rows;
   console.log(data.user);
 });
 
