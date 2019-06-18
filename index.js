@@ -21,15 +21,16 @@ var connection = mysql.createConnection({
 const data = {};
 
 // select MyGuests table and print all colums
-connection.query("select * from auth", function(err, rows, fields) {
-  if (err) throw err;
-  data.user = rows;
-  console.log(data.user);
-});
 
 // use express get method
 // create root router and print hello world
 app.get("/", function(req, res) {
+  connection.query("select * from auth", function(err, rows, fields) {
+    if (err) throw err;
+    data.user = rows;
+    console.log(data.user);
+  });
+
   res.render("index", { data: data.user });
 });
 
